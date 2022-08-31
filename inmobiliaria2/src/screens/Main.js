@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import {Card} from "./Card"
+import {Card} from "../screens"
 
 export const Main = () => {
   return (
     <View style={style.container}>
-      <Card />
+      <Card>
+      </Card>
+       
+      
+      
     
     </View>
   );
@@ -21,4 +25,5 @@ const style = StyleSheet.create({
     justifyContent: 'flex-start',
     padding: 20,
   },
+  
 })

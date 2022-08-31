@@ -1,23 +1,23 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
-import React from 'react'
-import { style } from './style'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
+import { style } from '../styles/style'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export const ListItem = ({ item }) => {
+  const [isLike, setIsLike] = useState(true);
 
   const { id, image, nombre, direccion, habitaciones, banos, superficie, costo, calificacion } = item
-  console.log(image)
+
 
   return (
     <View style={style.containerBox}>
 
-
-      <Image source={{ uri: image }}
-        style={style.image} />
-
-
+      
+        <Image source={{ uri: image }}
+          style={style.image} />
+        
       <View style={style.titleView}>
 
         <Text style={style.title}>{nombre}</Text>
@@ -45,13 +45,16 @@ export const ListItem = ({ item }) => {
 
         </View>
 
-        <View>
+        <View style={style.direction}>
+          <Text style={style.priceTitle}>{costo}</Text>
+          <Ionicons style={style.heartIcon} name='heart-circle' size={40} color={'grey'} />
         </View>
+
+        
 
       </View>
     </View>
+    
   )
 }
-
-
 
